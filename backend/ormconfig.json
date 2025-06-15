@@ -1,0 +1,29 @@
+{
+  "development": {
+    "dialect": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "your_username",
+    "password": "your_password",
+    "database": "todo_dev_db",
+    "seederStorage": "sequelize"
+  },
+  "test": {
+    "dialect": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "your_username",
+    "password": "your_password",
+    "database": "todo_test_db",
+    "logging": false
+  },
+  "production": {
+    "dialect": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "your_username",
+    "password": "your_password",
+    "database": "todo_prod_db",
+    "logging": false
+  }
+}
