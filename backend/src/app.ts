@@ -18,7 +18,7 @@ app.use(
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  res.send('Todo API is working!')
+  res.send('API is working!')
 })
 
 app.use('/api/todos', todoRoutes)
