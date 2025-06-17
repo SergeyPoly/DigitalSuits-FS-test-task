@@ -22,12 +22,22 @@ const sequelize = new Sequelize(
 
 export default sequelize
 
-export const connectDB = async () => {
-  try {
-    await sequelize.authenticate()
-    console.log('Connection to the database has been established successfully.')
-  } catch (error) {
-    console.error('Unable to connect to the database:', error)
-    process.exit(1)
+export const connectDB = async (retries = 5, delay = 3000) => {
+  for (let i = 1; i <= retries; i++) {
+    try {
+      await sequelize.authenticate()
+      console.log('Connection to the database has been established successfully.')
+      return
+    } catch (error) {
+      console.error(`Attempt ${i} - Unable to connect to the database:`, error)
+
+      if (i === retries) {
+        console.error('All retries exhausted. Exiting.')
+        process.exit(1)
+      }
+
+      console.log(`Retrying in ${delay / 1000} seconds...`)
+      await new Promise(res => setTimeout(res, delay))
+    }
   }
 }

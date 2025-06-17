@@ -29,7 +29,7 @@ Follow these steps to get the application up and running on your local machine.
    ```
    ###### Run Database Migrations
    ```bash
-   npm run db:migrate
+   npm run migrate
    ```
    ###### Start the Backend Server
    ```bash
@@ -67,3 +67,21 @@ Ensure you are in the backend/ directory.
 npm test
 ```
 Note: Integration tests will automatically manage (drop and recreate) the todo_test_db for a clean state before running. Ensure your todo_test_db is configured in ormconfig.json.
+
+### Dockerization
+You can containerize the entire application (backend, frontend, and PostgreSQL database) using Docker Compose.
+
+1. Ensure Docker Desktop (or Docker Engine) is running on your system.
+2. Create a .env file (from .env.example) in the root directory of your project next to docker-compose.yml for shared environment variables required by Docker Compose services.
+3. To build and start services run these commands from the project root directory:
+   ```bash
+   docker compose build
+   docker compose up -d
+   ```
+4. Run migrations inside the Backend Container (container must be running)
+   ```bash
+   docker-compose run migrate
+   ```
+5. Access the Application:
+   * Backend API: http://localhost:5000/api/todos
+   * Frontend App: http://localhost:3000

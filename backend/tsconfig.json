@@ -13,6 +13,6 @@
     "typeRoots": ["./node_modules/@types", "./src/types"],
     "types": ["node", "jest"]
   },
-  "include": ["src/**/*.ts", "tests/**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "tests"]
 }
