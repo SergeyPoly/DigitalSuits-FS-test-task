@@ -21,7 +21,7 @@ Follow these steps to get the application up and running on your local machine.
        * Create a .env file in the backend/ directory (next to package.json).
        * Copy the contents from .env.example into your new .env file and replace placeholders with your PostgreSQL credentials.
    3. Sequelize CLI Configuration:
-       * Ensure ormconfig.json is correctly configured for your development and test databases. It should use the database names (todo_db, todo_test_db) and credentials you've set up.
+       * Ensure ormconfig.js is correctly configured for your development and test databases. It should use the database names (todo_db, todo_test_db) and credentials you've set up.
 
    ###### Install Dependencies
    ```bash
@@ -66,7 +66,7 @@ Ensure you are in the backend/ directory.
 ```bash
 npm test
 ```
-Note: Integration tests will automatically manage (drop and recreate) the todo_test_db for a clean state before running. Ensure your todo_test_db is configured in ormconfig.json.
+Note: Integration tests will automatically manage (drop and recreate) the todo_test_db for a clean state before running. Ensure your todo_test_db is configured in ormconfig.js.
 
 ### Dockerization
 You can containerize the entire application (backend, frontend, and PostgreSQL database) using Docker Compose.
