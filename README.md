@@ -1,4 +1,5 @@
 ## Full-Stack Todo Application
+<a href="https://docs.google.com/document/d/11TwSAA83FAaRE77CAOoCd55g04RILXaUJMFRblkAWg0/edit?usp=sharing" target="_blank">(Task requirements)</a>
 
 ### Getting Started
 Follow these steps to get the application up and running on your local machine.
